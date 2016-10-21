@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WYListViewController" customModule="WYListViewController" customModuleProvider="target">
+            <connections>
+                <outlet property="scrollView" destination="Hi8-sa-kJc" id="yQJ-nA-hrg"/>
+                <outlet property="segmentView" destination="Nqb-xk-fTU" id="1CB-hu-3V6"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Nqb-xk-fTU">
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="OiM-Iz-ARt"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="10" id="oFp-3f-JsU" customClass="WYCollectionViewFlowLayout" customModule="WYListViewController" customModuleProvider="target">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="size" keyPath="estimatedItemSizeConstant">
+                                <size key="value" width="50" height="50"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jqP-jD-hn4">
+                    <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="yug-d5-Ue6" customClass="WYDesignablePixelConstant" customModule="WYListViewController" customModuleProvider="target">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="pixelConstant">
+                                    <integer key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </constraint>
+                    </constraints>
+                </view>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hi8-sa-kJc"/>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Hi8-sa-kJc" secondAttribute="trailing" id="3il-eW-2sO"/>
+                <constraint firstAttribute="bottom" secondItem="Hi8-sa-kJc" secondAttribute="bottom" id="A4S-7a-izs"/>
+                <constraint firstAttribute="trailing" secondItem="jqP-jD-hn4" secondAttribute="trailing" id="KrQ-Q5-Tfl"/>
+                <constraint firstItem="jqP-jD-hn4" firstAttribute="top" secondItem="Nqb-xk-fTU" secondAttribute="bottom" id="O6X-n5-TBq"/>
+                <constraint firstItem="jqP-jD-hn4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PNN-zr-06A"/>
+                <constraint firstItem="Hi8-sa-kJc" firstAttribute="top" secondItem="jqP-jD-hn4" secondAttribute="bottom" id="okO-Tc-eK6"/>
+                <constraint firstItem="Nqb-xk-fTU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="saE-2L-stc"/>
+                <constraint firstItem="Hi8-sa-kJc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="t1S-Af-gRV"/>
+                <constraint firstAttribute="trailing" secondItem="Nqb-xk-fTU" secondAttribute="trailing" id="ww1-SQ-bLT"/>
+                <constraint firstItem="Nqb-xk-fTU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="z2o-79-CE4"/>
+            </constraints>
+            <point key="canvasLocation" x="25.5" y="50.5"/>
+        </view>
+    </objects>
+</document>

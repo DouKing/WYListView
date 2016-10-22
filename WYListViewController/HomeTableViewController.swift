@@ -59,7 +59,7 @@ extension HomeTableViewController: WYListViewControllerDataSource {
     }
     
     func listViewController(_ listVC: WYListViewController, titleForRowAtIndexPath indexPath: IndexPath) -> String? {
-        return "row:" + String(indexPath.row)
+        return "section:" + String(indexPath.section)
     }
 }
 

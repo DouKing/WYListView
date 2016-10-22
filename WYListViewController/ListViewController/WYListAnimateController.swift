@@ -18,8 +18,25 @@ class WYListAnimateController: NSObject, UIViewControllerTransitioningDelegate {
 fileprivate class WYListPresentationController: UIPresentationController {
     
     weak var bgView: UIView!
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+        UIDevice.current.endGeneratingDeviceOrientationNotifications()
+    }
+    
+    override init(presentedViewController: UIViewController, presenting presentingViewController: UIViewController?) {
+        super.init(presentedViewController: presentedViewController, presenting: presentingViewController)
+        UIDevice.current.beginGeneratingDeviceOrientationNotifications()
+        NotificationCenter.default.addObserver(self, selector: #selector(handleDeviceOrientationNotification(_:)), name: Notification.Name.UIDeviceOrientationDidChange, object: nil)
+    }
+    
     @objc private func handleDismiss() {
         self.presentingViewController.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc private func handleDeviceOrientationNotification(_ note: Notification) {
+        self.bgView.frame = (self.containerView?.bounds)!
+        self.presentedView?.frame = self.frameOfPresentedViewInContainerView
     }
     
     override func presentationTransitionWillBegin() {
@@ -69,7 +86,7 @@ fileprivate class WYListPresentationController: UIPresentationController {
             return CGRect.zero
         }
         let width: CGFloat = containerView.bounds.size.width
-        let height: CGFloat = 400.0
+        let height: CGFloat = min(400.0, containerView.bounds.size.height - 44)
         return CGRect(x: 0, y: containerView.bounds.size.height - height, width: width, height: height)
     }
     

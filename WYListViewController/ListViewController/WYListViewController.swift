@@ -51,17 +51,27 @@ open class WYListViewController: UIViewController {
     fileprivate let animateController: WYListAnimateController = WYListAnimateController()
     public var dataSource: WYListViewControllerDataSource?
     
-    @IBOutlet private weak var segmentView: UICollectionView!
-    @IBOutlet private weak var scrollView: UIScrollView! {
+    @IBOutlet fileprivate weak var segmentView: UICollectionView! {
         didSet {
-            scrollView.delegate = self
+            segmentView.dataSource = self
+            segmentView.delegate = self
+            let nib = UINib(nibName: "WYSegmentCell", bundle: nil)
+            segmentView.register(nib, forCellWithReuseIdentifier: WYSegmentCell.cellId)
         }
     }
     
+    @IBOutlet fileprivate weak var contentView: UICollectionView! {
+        didSet {
+            contentView.dataSource = self
+            contentView.delegate = self
+            let nib = UINib(nibName: "WYContentCell", bundle: nil)
+            contentView.register(nib, forCellWithReuseIdentifier: WYContentCell.cellId)
+        }
+    }
+    
+    
     open override func viewDidLoad() {
         super.viewDidLoad()
-        self.configureSegmentView()
-        self.setupTableViews()
     }
     
     open override func viewWillAppear(_ animated: Bool) {
@@ -76,53 +86,12 @@ open class WYListViewController: UIViewController {
             self.navigationController?.navigationBar.isTranslucent = translucent
         }
     }
-  
+    
     open override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.configureScrollViewContent()
+        let flowLayout = self.contentView.collectionViewLayout as! UICollectionViewFlowLayout
+        flowLayout.itemSize = self.contentView.bounds.size
     }
-    
-    private func configureSegmentView() {
-        self.segmentView.dataSource = self
-        self.segmentView.delegate = self
-        let nib = UINib(nibName: "WYSegmentCell", bundle: nil)
-        self.segmentView.register(nib, forCellWithReuseIdentifier: WYSegmentCell.cellId)
-    }
-    
-    private func setupTableViews() {
-        guard let dataSource = self.dataSource else {
-            return
-        }
-        let number = dataSource.numberOfSections(in: self)
-        for i in 0..<number {
-            let tableView = UITableView(frame: .zero, style: .plain)
-            tableView.tag = i + tableViewBaseTag
-            tableView.delegate = self
-            tableView.dataSource = self
-            tableView.separatorStyle = .none
-            let nib = UINib(nibName: "WYListCell", bundle: nil)
-            tableView.register(nib, forCellReuseIdentifier: WYListCell.cellId)
-            self.scrollView.addSubview(tableView)
-        }
-    }
-    
-    private func configureScrollViewContent() {
-        var number: Int = 0
-        if let dataSource = self.dataSource {
-            number = dataSource.numberOfSections(in: self)
-        }
-        let width = self.scrollView.frame.size.width
-        let height = self.scrollView.frame.size.height
-        
-        self.scrollView.contentSize = CGSize(width: CGFloat(number) * width, height: 0)
-        for i in 0..<number {
-            let tag = i + tableViewBaseTag
-            let tableView = self.scrollView.viewWithTag(tag)!
-            let frame = CGRect(x: CGFloat(i) * width, y: 0, width: width, height: height)
-            tableView.frame = frame
-        }
-    }
-    
 }
 
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource -
@@ -136,13 +105,25 @@ extension WYListViewController: UICollectionViewDelegateFlowLayout, UICollection
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WYSegmentCell.cellId, for: indexPath) as! WYSegmentCell
+        
+        if collectionView == self.segmentView {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WYSegmentCell.cellId, for: indexPath) as! WYSegmentCell
+            guard let dataSource = self.dataSource else {
+                return cell
+            }
+            let title = dataSource.listViewController(self, titleForSection: indexPath.item)
+            cell.setup(withTitle: title)
+            return cell
+        }
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WYContentCell.cellId, for: indexPath) as! WYContentCell
         guard let dataSource = self.dataSource else {
             return cell
         }
-        let title = dataSource.listViewController(self, titleForSection: indexPath.item)
-        cell.setup(withTitle: title)
+        let title = dataSource.listViewController(self, titleForRowAtIndexPath: IndexPath(row: 0, section: indexPath.row))
+        cell.titleLabel.text = title
         return cell
+        
     }
 }
 
@@ -174,4 +155,8 @@ fileprivate extension WYSegmentCell {
 
 fileprivate extension WYListCell {
     static let cellId = "kWYListCellId"
+}
+
+fileprivate extension WYContentCell {
+    static let cellId = "kWYContentCellId"
 }

@@ -23,6 +23,8 @@
 		003D86F91DB8D3660057634C /* img_address_area_selected_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 003D86F71DB8D3660057634C /* img_address_area_selected_icon@2x.png */; };
 		003D86FA1DB8D3660057634C /* img_address_area_selected_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 003D86F81DB8D3660057634C /* img_address_area_selected_icon@3x.png */; };
 		003D86FC1DB9B5010057634C /* WYListAnimateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003D86FB1DB9B5010057634C /* WYListAnimateController.swift */; };
+		006045491DBB5F3B00B183FA /* WYContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006045471DBB5F3B00B183FA /* WYContentCell.swift */; };
+		0060454A1DBB5F3B00B183FA /* WYContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006045481DBB5F3B00B183FA /* WYContentCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		003D86F71DB8D3660057634C /* img_address_area_selected_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_address_area_selected_icon@2x.png"; sourceTree = "<group>"; };
 		003D86F81DB8D3660057634C /* img_address_area_selected_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_address_area_selected_icon@3x.png"; sourceTree = "<group>"; };
 		003D86FB1DB9B5010057634C /* WYListAnimateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WYListAnimateController.swift; sourceTree = "<group>"; };
+		006045471DBB5F3B00B183FA /* WYContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WYContentCell.swift; sourceTree = "<group>"; };
+		006045481DBB5F3B00B183FA /* WYContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WYContentCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,8 @@
 				003D86EB1DB7D0370057634C /* WYListCell.xib */,
 				003D86F01DB7D0740057634C /* WYSegmentCell.swift */,
 				003D86F11DB7D0740057634C /* WYSegmentCell.xib */,
+				006045471DBB5F3B00B183FA /* WYContentCell.swift */,
+				006045481DBB5F3B00B183FA /* WYContentCell.xib */,
 				003D86F41DB7D23D0057634C /* CustomConstant.swift */,
 			);
 			path = ListViewController;
@@ -183,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				003D86D71DB787290057634C /* test.plist in Resources */,
+				0060454A1DBB5F3B00B183FA /* WYContentCell.xib in Resources */,
 				003D86FA1DB8D3660057634C /* img_address_area_selected_icon@3x.png in Resources */,
 				003D86F31DB7D0740057634C /* WYSegmentCell.xib in Resources */,
 				003D86CA1DB7773A0057634C /* LaunchScreen.storyboard in Resources */,
@@ -202,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				003D86D21DB778380057634C /* HomeTableViewController.swift in Sources */,
+				006045491DBB5F3B00B183FA /* WYContentCell.swift in Sources */,
 				003D86FC1DB9B5010057634C /* WYListAnimateController.swift in Sources */,
 				003D86C01DB7773A0057634C /* AppDelegate.swift in Sources */,
 				003D86F51DB7D23D0057634C /* CustomConstant.swift in Sources */,

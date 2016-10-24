@@ -14,7 +14,6 @@
 		003D86D21DB778380057634C /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003D86D11DB778380057634C /* HomeTableViewController.swift */; };
 		003D86D71DB787290057634C /* test.plist in Resources */ = {isa = PBXBuildFile; fileRef = 003D86D61DB787290057634C /* test.plist */; };
 		003D86E81DB7D0100057634C /* WYListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003D86E61DB7D0100057634C /* WYListView.swift */; };
-		003D86E91DB7D0100057634C /* WYListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 003D86E71DB7D0100057634C /* WYListView.xib */; };
 		003D86EC1DB7D0370057634C /* WYListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003D86EA1DB7D0370057634C /* WYListCell.swift */; };
 		003D86ED1DB7D0370057634C /* WYListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 003D86EB1DB7D0370057634C /* WYListCell.xib */; };
 		003D86F21DB7D0740057634C /* WYSegmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003D86F01DB7D0740057634C /* WYSegmentCell.swift */; };
@@ -26,6 +25,7 @@
 		006045491DBB5F3B00B183FA /* WYContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006045471DBB5F3B00B183FA /* WYContentCell.swift */; };
 		0060454A1DBB5F3B00B183FA /* WYContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006045481DBB5F3B00B183FA /* WYContentCell.xib */; };
 		0060454C1DBDAAF500B183FA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0060454B1DBDAAF500B183FA /* DetailViewController.swift */; };
+		00AE04171DBE14E800278D6D /* WYListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00AE04161DBE14E800278D6D /* WYListView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +38,6 @@
 		003D86D11DB778380057634C /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		003D86D61DB787290057634C /* test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = test.plist; sourceTree = "<group>"; };
 		003D86E61DB7D0100057634C /* WYListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WYListView.swift; sourceTree = "<group>"; };
-		003D86E71DB7D0100057634C /* WYListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WYListView.xib; sourceTree = "<group>"; };
 		003D86EA1DB7D0370057634C /* WYListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WYListCell.swift; sourceTree = "<group>"; };
 		003D86EB1DB7D0370057634C /* WYListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WYListCell.xib; sourceTree = "<group>"; };
 		003D86F01DB7D0740057634C /* WYSegmentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WYSegmentCell.swift; sourceTree = "<group>"; };
@@ -50,6 +49,7 @@
 		006045471DBB5F3B00B183FA /* WYContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WYContentCell.swift; sourceTree = "<group>"; };
 		006045481DBB5F3B00B183FA /* WYContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WYContentCell.xib; sourceTree = "<group>"; };
 		0060454B1DBDAAF500B183FA /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		00AE04161DBE14E800278D6D /* WYListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WYListView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +102,7 @@
 				003D86F61DB8D3660057634C /* images */,
 				003D86FB1DB9B5010057634C /* WYListPresentationController.swift */,
 				003D86E61DB7D0100057634C /* WYListView.swift */,
-				003D86E71DB7D0100057634C /* WYListView.xib */,
+				00AE04161DBE14E800278D6D /* WYListView.xib */,
 				003D86EA1DB7D0370057634C /* WYListCell.swift */,
 				003D86EB1DB7D0370057634C /* WYListCell.xib */,
 				003D86F01DB7D0740057634C /* WYSegmentCell.swift */,
@@ -199,7 +199,7 @@
 				003D86C71DB7773A0057634C /* Assets.xcassets in Resources */,
 				003D86F91DB8D3660057634C /* img_address_area_selected_icon@2x.png in Resources */,
 				003D86C51DB7773A0057634C /* Main.storyboard in Resources */,
-				003D86E91DB7D0100057634C /* WYListView.xib in Resources */,
+				00AE04171DBE14E800278D6D /* WYListView.xib in Resources */,
 				003D86ED1DB7D0370057634C /* WYListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

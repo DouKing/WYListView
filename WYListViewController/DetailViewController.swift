@@ -53,7 +53,7 @@ class DetailViewController: UIViewController {
 // MARK: - WYListViewDataSource -
 extension DetailViewController: WYListViewDataSource, WYListViewDelegate {
     func numberOfSections(in listView: WYListView) -> Int {
-        return 5
+        return 1
     }
     
     func listView(_ listView: WYListView, numberOfRowsInSection section: Int) -> Int {

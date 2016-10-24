@@ -153,6 +153,14 @@ extension WYListView: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
         return cell
     }
     
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if collectionView == self.contentView {
+            return self.contentView.bounds.size
+        }
+        let title = self.dataSource?.listView(self, titleForSection: indexPath.item)
+        return CGSize(width: WYSegmentCell.width(withTitle: title), height: collectionView.bounds.size.height)
+    }
+    
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.scroll(to: indexPath.item, animated: true)
     }
@@ -211,7 +219,7 @@ extension WYListView {
         if let lab = layoutAttributes {
             rect = lab.frame
         }
-        let insert: CGFloat = 40, height: CGFloat = 2
+        let insert: CGFloat = WYSegmentCell.contentInsert, height: CGFloat = 2
         let frame = CGRect(x: rect.origin.x + insert, y: rect.size.height - height,
                            width: rect.size.width - insert * 2, height: height)
         if animated {

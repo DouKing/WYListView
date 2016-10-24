@@ -43,7 +43,7 @@ class WYContentCell: UICollectionViewCell {
             }
             self.tableView.selectRow(at: indexPath, animated: animated, scrollPosition: .none)
             if offsetY != nil {
-                self.tableView.setContentOffset(CGPoint(x: self.tableView.contentOffset.x, y: offsetY!), animated: animated)
+                self.tableView.setContentOffset(CGPoint(x: self.tableView.contentOffset.x, y: offsetY!), animated: false)
             }
         }
     }
@@ -76,6 +76,7 @@ extension WYContentCell: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.scrollToRow(at: indexPath, at: .none, animated: true)
         self.delegate?.contentCell(self, didSelectRow: indexPath.row)
+        self.delegate?.contentCell(self, didScrollTo: tableView.contentOffset.y)
     }
     
     func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {

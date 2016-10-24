@@ -15,22 +15,19 @@
                 <rect key="frame" x="0.0" y="0.0" width="90" height="50"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="39C-Kf-MTQ">
-                        <constraints>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="10" id="3uP-5P-NRf"/>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="10" id="DRX-6j-aVX"/>
-                        </constraints>
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="39C-Kf-MTQ">
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <state key="normal">
-                            <color key="titleColor" red="0.1019607843" green="0.098039215690000001" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleColor" red="0.10196078431372549" green="0.098039215686274508" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
                     </button>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="39C-Kf-MTQ" secondAttribute="trailing" constant="40" id="M6i-Wn-FqK"/>
-                <constraint firstItem="39C-Kf-MTQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="40" id="SbH-bG-VNH"/>
-                <constraint firstAttribute="bottom" secondItem="39C-Kf-MTQ" secondAttribute="bottom" id="jgl-FV-mGi"/>
+                <constraint firstAttribute="trailing" secondItem="39C-Kf-MTQ" secondAttribute="trailing" id="GAP-nA-D5t"/>
+                <constraint firstItem="39C-Kf-MTQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Oed-zq-5Ke"/>
+                <constraint firstItem="39C-Kf-MTQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="h58-ke-Mvb"/>
+                <constraint firstAttribute="bottom" secondItem="39C-Kf-MTQ" secondAttribute="bottom" id="k3n-eH-p3k"/>
             </constraints>
             <connections>
                 <outlet property="titleButton" destination="39C-Kf-MTQ" id="jqL-2Y-EdK"/>

@@ -38,6 +38,7 @@ class DetailViewController: UIViewController {
         self.automaticallyAdjustsScrollViewInsets = false
         let listVC = WYListView()
         listVC.dataSource = self
+        listVC.delegate = self
         listVC.view.frame = self.contentView.bounds
         self.addChildViewController(listVC)
         self.contentView.addSubview(listVC.view)
@@ -50,13 +51,13 @@ class DetailViewController: UIViewController {
 }
 
 // MARK: - WYListViewDataSource -
-extension DetailViewController: WYListViewDataSource {
+extension DetailViewController: WYListViewDataSource, WYListViewDelegate {
     func numberOfSections(in listView: WYListView) -> Int {
         return 5
     }
     
     func listView(_ listView: WYListView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 15
     }
     
     func listView(_ listView: WYListView, titleForSection section: Int) -> String? {
@@ -64,6 +65,10 @@ extension DetailViewController: WYListViewDataSource {
     }
     
     func listView(_ listView: WYListView, titleForRowAtIndexPath indexPath: IndexPath) -> String? {
-        return "section:" + String(indexPath.section)
+        return "section:" + String(indexPath.section) + ", row:" + String(indexPath.row)
+    }
+    
+    func listView(_ listView: WYListView, didSelectRowAtIndexPath indexPath: IndexPath) {
+        print("did select (\(indexPath.section), \(indexPath.row))")
     }
 }

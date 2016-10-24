@@ -15,23 +15,19 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="616"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95i-Mj-VBh">
-                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yYc-c7-rXO">
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </tableView>
                 </subviews>
             </view>
-            <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="95i-Mj-VBh" secondAttribute="bottom" id="CIl-Ha-WYU"/>
-                <constraint firstItem="95i-Mj-VBh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="dWX-oy-MbI"/>
-                <constraint firstItem="95i-Mj-VBh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="lcG-m7-QP0"/>
-                <constraint firstAttribute="trailing" secondItem="95i-Mj-VBh" secondAttribute="trailing" constant="8" id="nlI-rG-f3k"/>
+                <constraint firstAttribute="trailing" secondItem="yYc-c7-rXO" secondAttribute="trailing" id="5gj-JE-joG"/>
+                <constraint firstItem="yYc-c7-rXO" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="LjA-y7-YSV"/>
+                <constraint firstItem="yYc-c7-rXO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Mv5-xg-55C"/>
+                <constraint firstAttribute="bottom" secondItem="yYc-c7-rXO" secondAttribute="bottom" id="wjL-20-Rom"/>
             </constraints>
             <connections>
-                <outlet property="titleLabel" destination="95i-Mj-VBh" id="qdl-1k-vFQ"/>
+                <outlet property="tableView" destination="yYc-c7-rXO" id="M7I-cz-rt6"/>
             </connections>
             <point key="canvasLocation" x="24.5" y="52"/>
         </collectionViewCell>

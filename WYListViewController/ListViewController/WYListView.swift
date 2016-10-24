@@ -20,11 +20,19 @@ public protocol WYListViewDataSource {
     @objc optional func listView(_ listView: WYListView, rowHeightAtIndexPath indexPath: IndexPath) -> CGFloat
 }
 
+@objc
+public protocol WYListViewDelegate {
+    @objc optional func listView(_ listView: WYListView, didSelectRowAtIndexPath indexPath: IndexPath)
+}
+
 open class WYListView: UIViewController {
     
     fileprivate let tableViewBaseTag: Int = 2000
     fileprivate var currentSection: Int?
+    fileprivate var selectedIndexPaths: [Int : Int] = [:]
+    fileprivate var selectedOffsetYs: [Int : CGFloat] = [:]
     public var dataSource: WYListViewDataSource?
+    public var delegate: WYListViewDelegate?
     
     fileprivate weak var floatView: UIView?
     
@@ -102,6 +110,14 @@ open class WYListView: UIViewController {
         }
     }
     
+    fileprivate func select(section: Int, row: Int?) {
+        self.selectedIndexPaths[section] = row
+    }
+    
+    fileprivate func select(section: Int, offsetY: CGFloat?) {
+        self.selectedOffsetYs[section] = offsetY
+    }
+    
     @objc private func handleDeviceOrientationNotification(_ note: Notification) {
         self.changeCollectionViewLayout()
     }
@@ -130,16 +146,41 @@ extension WYListView: UICollectionViewDelegateFlowLayout, UICollectionViewDataSo
         }
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WYContentCell.cellId, for: indexPath) as! WYContentCell
-        guard let dataSource = self.dataSource else {
-            return cell
-        }
-        let title = dataSource.listView(self, titleForRowAtIndexPath: IndexPath(row: 0, section: indexPath.row))
-        cell.titleLabel.text = title
+        cell.dataSource = self
+        cell.delegate = self
+        cell.section = indexPath.item
+        cell.reload(animated: false, selectRow: self.selectedIndexPaths[indexPath.item], offsetY: self.selectedOffsetYs[indexPath.item])
         return cell
     }
     
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.scroll(to: indexPath.item, animated: true)
+    }
+}
+
+extension WYListView: WYContentCellDataSource, WYContentCellDelegate {
+    
+    func numberOfRows(in contentCell: WYContentCell) -> Int {
+        guard let dataSource = self.dataSource else {
+            return 0
+        }
+        return dataSource.listView(self, numberOfRowsInSection: contentCell.section)
+    }
+    
+    func contentCell(_ cell: WYContentCell, titleForRow row: Int) -> String? {
+        guard let dataSource = self.dataSource else {
+            return nil
+        }
+        return dataSource.listView(self, titleForRowAtIndexPath: IndexPath(row: row, section: cell.section))
+    }
+    
+    func contentCell(_ cell: WYContentCell, didSelectRow row: Int) {
+        self.select(section: cell.section, row: row)
+        self.delegate?.listView?(self, didSelectRowAtIndexPath: IndexPath(row: row, section: cell.section))
+    }
+    
+    func contentCell(_ cell: WYContentCell, didScrollTo offsetY: CGFloat) {
+        self.select(section: cell.section, offsetY: offsetY)
     }
 }
 
@@ -204,10 +245,6 @@ extension WYListView {
 
 fileprivate extension WYSegmentCell {
     static let cellId = "kWYSegmentCellId"
-}
-
-fileprivate extension WYListCell {
-    static let cellId = "kWYListCellId"
 }
 
 fileprivate extension WYContentCell {

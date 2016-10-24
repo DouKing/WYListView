@@ -41,15 +41,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
-
-class WYNavigationBar: UINavigationBar {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.isTranslucent = false
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        self.isTranslucent = false
-    }
-}

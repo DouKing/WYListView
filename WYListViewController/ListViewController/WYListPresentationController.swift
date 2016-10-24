@@ -8,14 +8,7 @@
 
 import UIKit
 
-class WYListAnimateController: NSObject, UIViewControllerTransitioningDelegate {
-    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        return WYListPresentationController(presentedViewController: presented, presenting: presenting)
-    }
-}
-
-// MARK: - WYListPresentationController -
-fileprivate class WYListPresentationController: UIPresentationController {
+open class WYListPresentationController: UIPresentationController {
     
     weak var bgView: UIView!
     
@@ -39,7 +32,7 @@ fileprivate class WYListPresentationController: UIPresentationController {
         self.presentedView?.frame = self.frameOfPresentedViewInContainerView
     }
     
-    override func presentationTransitionWillBegin() {
+    override open func presentationTransitionWillBegin() {
         guard let containerView = self.containerView else {
             print("error!")
             return
@@ -59,14 +52,14 @@ fileprivate class WYListPresentationController: UIPresentationController {
             }, completion: nil)
     }
     
-    override func presentationTransitionDidEnd(_ completed: Bool) {
+    override open func presentationTransitionDidEnd(_ completed: Bool) {
         if !completed {
             self.presentingViewController.viewDidDisappear(true)
             self.bgView.removeFromSuperview()
         }
     }
     
-    override func dismissalTransitionWillBegin() {
+    override open func dismissalTransitionWillBegin() {
         self.presentingViewController.viewWillAppear(true)
         self.presentingViewController.transitionCoordinator?.animate(alongsideTransition: { [unowned self] (transitionCoordinatorContext) in
             self.presentingViewController.view.transform = CGAffineTransform.identity
@@ -74,14 +67,14 @@ fileprivate class WYListPresentationController: UIPresentationController {
             }, completion: nil)
     }
     
-    override func dismissalTransitionDidEnd(_ completed: Bool) {
+    override open func dismissalTransitionDidEnd(_ completed: Bool) {
         if completed {
             self.presentingViewController.viewDidAppear(true)
             self.bgView.removeFromSuperview()
         }
     }
     
-    override var frameOfPresentedViewInContainerView: CGRect {
+    override open var frameOfPresentedViewInContainerView: CGRect {
         guard let containerView = self.containerView else {
             return CGRect.zero
         }
@@ -90,7 +83,7 @@ fileprivate class WYListPresentationController: UIPresentationController {
         return CGRect(x: 0, y: containerView.bounds.size.height - height, width: width, height: height)
     }
     
-    override var presentedView: UIView? {
+    override open var presentedView: UIView? {
         let v = self.presentedViewController.view
         v?.layer.cornerRadius = 5
         v?.clipsToBounds = true

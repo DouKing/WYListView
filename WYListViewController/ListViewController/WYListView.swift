@@ -9,48 +9,22 @@
 import UIKit
 
 @objc
-public protocol WYListViewControllerDataSource {
-    func numberOfSections(in listViewController: WYListViewController) -> Int
-    func listViewController(_ listVC: WYListViewController, numberOfRowsInSection section: Int) -> Int
-    func listViewController(_ listVC: WYListViewController, titleForSection section: Int) -> String?
-    func listViewController(_ listVC: WYListViewController, titleForRowAtIndexPath indexPath: IndexPath) -> String?
+public protocol WYListViewDataSource {
+    func numberOfSections(in listView: WYListView) -> Int
+    func listView(_ listView: WYListView, numberOfRowsInSection section: Int) -> Int
+    func listView(_ listView: WYListView, titleForSection section: Int) -> String?
+    func listView(_ listView: WYListView, titleForRowAtIndexPath indexPath: IndexPath) -> String?
     
-    @objc optional func listViewController(_ listVC: WYListViewController, selectRowInSection section: Int) -> NSNumber? //@objc不支持Int?
-    @objc optional func sectionHeight(in listViewController: WYListViewController) -> CGFloat
-    @objc optional func listViewController(_ listVC: WYListViewController, rowHeightAtIndexPath indexPath: IndexPath) -> CGFloat
+    @objc optional func listView(_ listView: WYListView, selectRowInSection section: Int) -> NSNumber? //@objc不支持Int?
+    @objc optional func sectionHeight(in listView: WYListView) -> CGFloat
+    @objc optional func listView(_ listView: WYListView, rowHeightAtIndexPath indexPath: IndexPath) -> CGFloat
 }
 
-public enum WYListViewControllerAnimateStyle {
-    case normal, system
-}
-
-public extension UIViewController {
-    func setAnimateStyle(_ animateStyle: WYListViewControllerAnimateStyle) {
-        switch animateStyle {
-        case .normal:
-            var vc = self
-            if let nav = self as? UINavigationController {
-                vc = nav.viewControllers.first!
-            }
-            if let listVC = vc as? WYListViewController {
-                self.modalPresentationStyle = .custom
-                self.transitioningDelegate = listVC.animateController
-            }
-        default:
-            self.modalPresentationStyle = .fullScreen
-            self.transitioningDelegate = nil
-            break
-        }
-    }
-}
-
-open class WYListViewController: UIViewController {
+open class WYListView: UIViewController {
     
-    private var navigationBarTranslucent: Bool?
     fileprivate let tableViewBaseTag: Int = 2000
     fileprivate var currentSection: Int?
-    fileprivate let animateController: WYListAnimateController = WYListAnimateController()
-    public var dataSource: WYListViewControllerDataSource?
+    public var dataSource: WYListViewDataSource?
     
     fileprivate weak var floatView: UIView?
     
@@ -100,19 +74,6 @@ open class WYListViewController: UIViewController {
         }
     }
     
-    open override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationBarTranslucent = self.navigationController?.navigationBar.isTranslucent
-        self.navigationController?.navigationBar.isTranslucent = false
-    }
-    
-    open override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        if let translucent = self.navigationBarTranslucent {
-            self.navigationController?.navigationBar.isTranslucent = translucent
-        }
-    }
-    
     open override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         let flowLayout = self.contentView.collectionViewLayout as! UICollectionViewFlowLayout
@@ -147,7 +108,7 @@ open class WYListViewController: UIViewController {
 }
 
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource -
-extension WYListViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+extension WYListView: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let dataSource = self.dataSource else {
@@ -163,7 +124,7 @@ extension WYListViewController: UICollectionViewDelegateFlowLayout, UICollection
             guard let dataSource = self.dataSource else {
                 return cell
             }
-            let title = dataSource.listViewController(self, titleForSection: indexPath.item)
+            let title = dataSource.listView(self, titleForSection: indexPath.item)
             cell.setup(withTitle: title)
             return cell
         }
@@ -172,7 +133,7 @@ extension WYListViewController: UICollectionViewDelegateFlowLayout, UICollection
         guard let dataSource = self.dataSource else {
             return cell
         }
-        let title = dataSource.listViewController(self, titleForRowAtIndexPath: IndexPath(row: 0, section: indexPath.row))
+        let title = dataSource.listView(self, titleForRowAtIndexPath: IndexPath(row: 0, section: indexPath.row))
         cell.titleLabel.text = title
         return cell
     }
@@ -183,7 +144,7 @@ extension WYListViewController: UICollectionViewDelegateFlowLayout, UICollection
 }
 
 // MARK: - Scroll -
-extension WYListViewController {
+extension WYListView {
     
     fileprivate func scrollToLastSection(animated: Bool, completion: (() -> Swift.Void)? = nil) {
         guard let dataSource = self.dataSource else {

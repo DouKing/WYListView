@@ -88,6 +88,17 @@ open class WYListView: UIViewController {
         flowLayout.itemSize = self.contentView.bounds.size
     }
     
+    open func reloadData(selectRowsAtIndexPaths indexPaths: [IndexPath] = []) {
+        self.currentSection = nil
+        self.selectedIndexPaths = [:]
+        self.selectedOffsetYs = [:]
+        for indexPath in indexPaths {
+            self.select(section: indexPath.section, row: indexPath.row)
+        }
+        self.segmentView.reloadData()
+        self.contentView.reloadData()
+    }
+    
     private func observeDeviceOrientation() {
         UIDevice.current.beginGeneratingDeviceOrientationNotifications()
         NotificationCenter.default.addObserver(self, selector: #selector(handleDeviceOrientationNotification(_:)), name: Notification.Name.UIDeviceOrientationDidChange, object: nil)
@@ -195,7 +206,7 @@ extension WYListView: WYContentCellDataSource, WYContentCellDelegate {
 // MARK: - Scroll -
 extension WYListView {
     
-    fileprivate func scrollToLastSection(animated: Bool, completion: (() -> Swift.Void)? = nil) {
+    open func scrollToLastSection(animated: Bool, after timeInterval: TimeInterval = 0, completion: (() -> Swift.Void)? = nil) {
         guard let dataSource = self.dataSource else {
             return
         }
@@ -203,36 +214,38 @@ extension WYListView {
         if number < 1 {
             return
         }
-        self.scroll(to: number - 1, animated: animated, completion: completion)
+        self.scroll(to: number - 1, animated: animated, after: timeInterval, completion: completion)
     }
     
-    fileprivate func scroll(to section: Int, animated: Bool, completion: (() -> Swift.Void)? = nil) {
-        guard let dataSource = self.dataSource else {   return  }
-        let number = dataSource.numberOfSections(in: self)
-        self.currentSection = min(max(section, 0), number - 1)
-        let indexPath = IndexPath(item: self.currentSection!, section: 0)
-        self.segmentView.scrollToItem(at: indexPath, at: .init(rawValue: 0), animated: animated)
-        self.contentView.scrollToItem(at: indexPath, at: .init(rawValue: 0), animated: animated)
-        
-        let layoutAttributes = self.segmentView.collectionViewLayout.initialLayoutAttributesForAppearingItem(at: indexPath)
-        var rect = CGRect.zero
-        if let lab = layoutAttributes {
-            rect = lab.frame
-        }
-        let insert: CGFloat = WYSegmentCell.contentInsert, height: CGFloat = 2
-        let frame = CGRect(x: rect.origin.x + insert, y: rect.size.height - height,
-                           width: rect.size.width - insert * 2, height: height)
-        if animated {
-            UIView.animate(withDuration: 0.25, animations: { [unowned self] in
-                self.floatView?.frame = frame
-            }) { [unowned self] (finished) in
-                self.floatView?.alpha = 1
+    open func scroll(to section: Int, animated: Bool, after timeInterval: TimeInterval = 0, completion: (() -> Swift.Void)? = nil) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + timeInterval) { [unowned self] in
+            guard let dataSource = self.dataSource else {   return  }
+            let number = dataSource.numberOfSections(in: self)
+            self.currentSection = min(max(section, 0), number - 1)
+            let indexPath = IndexPath(item: self.currentSection!, section: 0)
+            self.segmentView.scrollToItem(at: indexPath, at: .init(rawValue: 0), animated: animated)
+            self.contentView.scrollToItem(at: indexPath, at: .init(rawValue: 0), animated: animated)
+            
+            let layoutAttributes = self.segmentView.collectionViewLayout.initialLayoutAttributesForAppearingItem(at: indexPath)
+            var rect = CGRect.zero
+            if let lab = layoutAttributes {
+                rect = lab.frame
             }
-        } else {
-            self.floatView?.frame = frame
-            self.floatView?.alpha = 1
-            if completion != nil {
-                completion!()
+            let insert: CGFloat = WYSegmentCell.contentInsert, height: CGFloat = 2
+            let frame = CGRect(x: rect.origin.x + insert, y: rect.size.height - height,
+                               width: rect.size.width - insert * 2, height: height)
+            if animated {
+                UIView.animate(withDuration: 0.25, animations: { [unowned self] in
+                    self.floatView?.frame = frame
+                }) { [unowned self] (finished) in
+                    self.floatView?.alpha = 1
+                }
+            } else {
+                self.floatView?.frame = frame
+                self.floatView?.alpha = 1
+                if completion != nil {
+                    completion!()
+                }
             }
         }
     }

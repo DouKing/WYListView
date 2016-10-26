@@ -11,22 +11,24 @@
 		003D86C51DB7773A0057634C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 003D86C31DB7773A0057634C /* Main.storyboard */; };
 		003D86C71DB7773A0057634C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 003D86C61DB7773A0057634C /* Assets.xcassets */; };
 		003D86CA1DB7773A0057634C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 003D86C81DB7773A0057634C /* LaunchScreen.storyboard */; };
-		003D86D21DB778380057634C /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003D86D11DB778380057634C /* HomeTableViewController.swift */; };
 		003D86D71DB787290057634C /* test.plist in Resources */ = {isa = PBXBuildFile; fileRef = 003D86D61DB787290057634C /* test.plist */; };
 		003D86E81DB7D0100057634C /* WYListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003D86E61DB7D0100057634C /* WYListView.swift */; };
-		003D86EC1DB7D0370057634C /* WYListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003D86EA1DB7D0370057634C /* WYListCell.swift */; };
-		003D86ED1DB7D0370057634C /* WYListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 003D86EB1DB7D0370057634C /* WYListCell.xib */; };
-		003D86F21DB7D0740057634C /* WYSegmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003D86F01DB7D0740057634C /* WYSegmentCell.swift */; };
-		003D86F31DB7D0740057634C /* WYSegmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 003D86F11DB7D0740057634C /* WYSegmentCell.xib */; };
-		003D86F51DB7D23D0057634C /* CustomConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003D86F41DB7D23D0057634C /* CustomConstant.swift */; };
 		003D86F91DB8D3660057634C /* img_address_area_selected_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 003D86F71DB8D3660057634C /* img_address_area_selected_icon@2x.png */; };
 		003D86FA1DB8D3660057634C /* img_address_area_selected_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 003D86F81DB8D3660057634C /* img_address_area_selected_icon@3x.png */; };
-		003D86FC1DB9B5010057634C /* WYListPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003D86FB1DB9B5010057634C /* WYListPresentationController.swift */; };
-		006045491DBB5F3B00B183FA /* WYContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006045471DBB5F3B00B183FA /* WYContentCell.swift */; };
-		0060454A1DBB5F3B00B183FA /* WYContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006045481DBB5F3B00B183FA /* WYContentCell.xib */; };
-		0060454C1DBDAAF500B183FA /* AddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0060454B1DBDAAF500B183FA /* AddressViewController.swift */; };
 		00AE04171DBE14E800278D6D /* WYListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00AE04161DBE14E800278D6D /* WYListView.xib */; };
-		00B3453F1DC093F8002A180F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B3453E1DC093F8002A180F /* DetailViewController.swift */; };
+		00B3454E1DC09F5B002A180F /* WYListPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B345411DC09F5B002A180F /* WYListPresentationController.swift */; };
+		00B3454F1DC09F5B002A180F /* CustomConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B345431DC09F5B002A180F /* CustomConstant.swift */; };
+		00B345501DC09F5B002A180F /* img_address_area_selected_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B345451DC09F5B002A180F /* img_address_area_selected_icon@2x.png */; };
+		00B345511DC09F5B002A180F /* img_address_area_selected_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B345461DC09F5B002A180F /* img_address_area_selected_icon@3x.png */; };
+		00B345521DC09F5B002A180F /* WYContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B345481DC09F5B002A180F /* WYContentCell.swift */; };
+		00B345531DC09F5B002A180F /* WYContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00B345491DC09F5B002A180F /* WYContentCell.xib */; };
+		00B345541DC09F5B002A180F /* WYListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B3454A1DC09F5B002A180F /* WYListCell.swift */; };
+		00B345551DC09F5B002A180F /* WYListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00B3454B1DC09F5B002A180F /* WYListCell.xib */; };
+		00B345561DC09F5B002A180F /* WYSegmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B3454C1DC09F5B002A180F /* WYSegmentCell.swift */; };
+		00B345571DC09F5B002A180F /* WYSegmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00B3454D1DC09F5B002A180F /* WYSegmentCell.xib */; };
+		00B3455C1DC09F64002A180F /* AddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B345591DC09F64002A180F /* AddressViewController.swift */; };
+		00B3455D1DC09F64002A180F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B3455A1DC09F64002A180F /* DetailViewController.swift */; };
+		00B3455E1DC09F64002A180F /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B3455B1DC09F64002A180F /* HomeTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,22 +38,24 @@
 		003D86C61DB7773A0057634C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		003D86C91DB7773A0057634C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		003D86CB1DB7773A0057634C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		003D86D11DB778380057634C /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		003D86D61DB787290057634C /* test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = test.plist; sourceTree = "<group>"; };
 		003D86E61DB7D0100057634C /* WYListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WYListView.swift; sourceTree = "<group>"; };
-		003D86EA1DB7D0370057634C /* WYListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WYListCell.swift; sourceTree = "<group>"; };
-		003D86EB1DB7D0370057634C /* WYListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WYListCell.xib; sourceTree = "<group>"; };
-		003D86F01DB7D0740057634C /* WYSegmentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WYSegmentCell.swift; sourceTree = "<group>"; };
-		003D86F11DB7D0740057634C /* WYSegmentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WYSegmentCell.xib; sourceTree = "<group>"; };
-		003D86F41DB7D23D0057634C /* CustomConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomConstant.swift; sourceTree = "<group>"; };
 		003D86F71DB8D3660057634C /* img_address_area_selected_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_address_area_selected_icon@2x.png"; sourceTree = "<group>"; };
 		003D86F81DB8D3660057634C /* img_address_area_selected_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_address_area_selected_icon@3x.png"; sourceTree = "<group>"; };
-		003D86FB1DB9B5010057634C /* WYListPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WYListPresentationController.swift; sourceTree = "<group>"; };
-		006045471DBB5F3B00B183FA /* WYContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WYContentCell.swift; sourceTree = "<group>"; };
-		006045481DBB5F3B00B183FA /* WYContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WYContentCell.xib; sourceTree = "<group>"; };
-		0060454B1DBDAAF500B183FA /* AddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressViewController.swift; sourceTree = "<group>"; };
 		00AE04161DBE14E800278D6D /* WYListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WYListView.xib; sourceTree = "<group>"; };
-		00B3453E1DC093F8002A180F /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		00B345411DC09F5B002A180F /* WYListPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WYListPresentationController.swift; sourceTree = "<group>"; };
+		00B345431DC09F5B002A180F /* CustomConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomConstant.swift; sourceTree = "<group>"; };
+		00B345451DC09F5B002A180F /* img_address_area_selected_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_address_area_selected_icon@2x.png"; sourceTree = "<group>"; };
+		00B345461DC09F5B002A180F /* img_address_area_selected_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_address_area_selected_icon@3x.png"; sourceTree = "<group>"; };
+		00B345481DC09F5B002A180F /* WYContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WYContentCell.swift; sourceTree = "<group>"; };
+		00B345491DC09F5B002A180F /* WYContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WYContentCell.xib; sourceTree = "<group>"; };
+		00B3454A1DC09F5B002A180F /* WYListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WYListCell.swift; sourceTree = "<group>"; };
+		00B3454B1DC09F5B002A180F /* WYListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WYListCell.xib; sourceTree = "<group>"; };
+		00B3454C1DC09F5B002A180F /* WYSegmentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WYSegmentCell.swift; sourceTree = "<group>"; };
+		00B3454D1DC09F5B002A180F /* WYSegmentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WYSegmentCell.xib; sourceTree = "<group>"; };
+		00B345591DC09F64002A180F /* AddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressViewController.swift; sourceTree = "<group>"; };
+		00B3455A1DC09F64002A180F /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		00B3455B1DC09F64002A180F /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,10 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				003D86D31DB779A20057634C /* ListViewController */,
+				00B345581DC09F64002A180F /* Demo */,
 				003D86BF1DB7773A0057634C /* AppDelegate.swift */,
-				003D86D11DB778380057634C /* HomeTableViewController.swift */,
-				00B3453E1DC093F8002A180F /* DetailViewController.swift */,
-				0060454B1DBDAAF500B183FA /* AddressViewController.swift */,
 				003D86C31DB7773A0057634C /* Main.storyboard */,
 				003D86C61DB7773A0057634C /* Assets.xcassets */,
 				003D86C81DB7773A0057634C /* LaunchScreen.storyboard */,
@@ -102,17 +104,13 @@
 		003D86D31DB779A20057634C /* ListViewController */ = {
 			isa = PBXGroup;
 			children = (
+				00B345401DC09F5B002A180F /* Animate */,
+				00B345421DC09F5B002A180F /* Configure */,
+				00B345441DC09F5B002A180F /* images */,
+				00B345471DC09F5B002A180F /* Views */,
 				003D86F61DB8D3660057634C /* images */,
-				003D86FB1DB9B5010057634C /* WYListPresentationController.swift */,
 				003D86E61DB7D0100057634C /* WYListView.swift */,
 				00AE04161DBE14E800278D6D /* WYListView.xib */,
-				003D86EA1DB7D0370057634C /* WYListCell.swift */,
-				003D86EB1DB7D0370057634C /* WYListCell.xib */,
-				003D86F01DB7D0740057634C /* WYSegmentCell.swift */,
-				003D86F11DB7D0740057634C /* WYSegmentCell.xib */,
-				006045471DBB5F3B00B183FA /* WYContentCell.swift */,
-				006045481DBB5F3B00B183FA /* WYContentCell.xib */,
-				003D86F41DB7D23D0057634C /* CustomConstant.swift */,
 			);
 			path = ListViewController;
 			sourceTree = "<group>";
@@ -124,6 +122,54 @@
 				003D86F81DB8D3660057634C /* img_address_area_selected_icon@3x.png */,
 			);
 			path = images;
+			sourceTree = "<group>";
+		};
+		00B345401DC09F5B002A180F /* Animate */ = {
+			isa = PBXGroup;
+			children = (
+				00B345411DC09F5B002A180F /* WYListPresentationController.swift */,
+			);
+			path = Animate;
+			sourceTree = "<group>";
+		};
+		00B345421DC09F5B002A180F /* Configure */ = {
+			isa = PBXGroup;
+			children = (
+				00B345431DC09F5B002A180F /* CustomConstant.swift */,
+			);
+			path = Configure;
+			sourceTree = "<group>";
+		};
+		00B345441DC09F5B002A180F /* images */ = {
+			isa = PBXGroup;
+			children = (
+				00B345451DC09F5B002A180F /* img_address_area_selected_icon@2x.png */,
+				00B345461DC09F5B002A180F /* img_address_area_selected_icon@3x.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		00B345471DC09F5B002A180F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				00B345481DC09F5B002A180F /* WYContentCell.swift */,
+				00B345491DC09F5B002A180F /* WYContentCell.xib */,
+				00B3454A1DC09F5B002A180F /* WYListCell.swift */,
+				00B3454B1DC09F5B002A180F /* WYListCell.xib */,
+				00B3454C1DC09F5B002A180F /* WYSegmentCell.swift */,
+				00B3454D1DC09F5B002A180F /* WYSegmentCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		00B345581DC09F64002A180F /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				00B345591DC09F64002A180F /* AddressViewController.swift */,
+				00B3455A1DC09F64002A180F /* DetailViewController.swift */,
+				00B3455B1DC09F64002A180F /* HomeTableViewController.swift */,
+			);
+			path = Demo;
 			sourceTree = "<group>";
 		};
 		0715D4551BF4FF1553C972A5 /* Frameworks */ = {
@@ -194,16 +240,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00B345551DC09F5B002A180F /* WYListCell.xib in Resources */,
 				003D86D71DB787290057634C /* test.plist in Resources */,
-				0060454A1DBB5F3B00B183FA /* WYContentCell.xib in Resources */,
+				00B345531DC09F5B002A180F /* WYContentCell.xib in Resources */,
+				00B345511DC09F5B002A180F /* img_address_area_selected_icon@3x.png in Resources */,
 				003D86FA1DB8D3660057634C /* img_address_area_selected_icon@3x.png in Resources */,
-				003D86F31DB7D0740057634C /* WYSegmentCell.xib in Resources */,
 				003D86CA1DB7773A0057634C /* LaunchScreen.storyboard in Resources */,
 				003D86C71DB7773A0057634C /* Assets.xcassets in Resources */,
+				00B345501DC09F5B002A180F /* img_address_area_selected_icon@2x.png in Resources */,
 				003D86F91DB8D3660057634C /* img_address_area_selected_icon@2x.png in Resources */,
+				00B345571DC09F5B002A180F /* WYSegmentCell.xib in Resources */,
 				003D86C51DB7773A0057634C /* Main.storyboard in Resources */,
 				00AE04171DBE14E800278D6D /* WYListView.xib in Resources */,
-				003D86ED1DB7D0370057634C /* WYListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,16 +262,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0060454C1DBDAAF500B183FA /* AddressViewController.swift in Sources */,
-				003D86D21DB778380057634C /* HomeTableViewController.swift in Sources */,
-				006045491DBB5F3B00B183FA /* WYContentCell.swift in Sources */,
-				003D86FC1DB9B5010057634C /* WYListPresentationController.swift in Sources */,
+				00B3455D1DC09F64002A180F /* DetailViewController.swift in Sources */,
+				00B345521DC09F5B002A180F /* WYContentCell.swift in Sources */,
+				00B345561DC09F5B002A180F /* WYSegmentCell.swift in Sources */,
+				00B3454F1DC09F5B002A180F /* CustomConstant.swift in Sources */,
+				00B3455E1DC09F64002A180F /* HomeTableViewController.swift in Sources */,
+				00B3455C1DC09F64002A180F /* AddressViewController.swift in Sources */,
+				00B3454E1DC09F5B002A180F /* WYListPresentationController.swift in Sources */,
+				00B345541DC09F5B002A180F /* WYListCell.swift in Sources */,
 				003D86C01DB7773A0057634C /* AppDelegate.swift in Sources */,
-				003D86F51DB7D23D0057634C /* CustomConstant.swift in Sources */,
-				003D86F21DB7D0740057634C /* WYSegmentCell.swift in Sources */,
-				00B3453F1DC093F8002A180F /* DetailViewController.swift in Sources */,
 				003D86E81DB7D0100057634C /* WYListView.swift in Sources */,
-				003D86EC1DB7D0370057634C /* WYListCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

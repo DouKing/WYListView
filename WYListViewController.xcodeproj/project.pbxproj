@@ -24,8 +24,9 @@
 		003D86FC1DB9B5010057634C /* WYListPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003D86FB1DB9B5010057634C /* WYListPresentationController.swift */; };
 		006045491DBB5F3B00B183FA /* WYContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006045471DBB5F3B00B183FA /* WYContentCell.swift */; };
 		0060454A1DBB5F3B00B183FA /* WYContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006045481DBB5F3B00B183FA /* WYContentCell.xib */; };
-		0060454C1DBDAAF500B183FA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0060454B1DBDAAF500B183FA /* DetailViewController.swift */; };
+		0060454C1DBDAAF500B183FA /* AddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0060454B1DBDAAF500B183FA /* AddressViewController.swift */; };
 		00AE04171DBE14E800278D6D /* WYListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00AE04161DBE14E800278D6D /* WYListView.xib */; };
+		00B3453F1DC093F8002A180F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B3453E1DC093F8002A180F /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,8 +49,9 @@
 		003D86FB1DB9B5010057634C /* WYListPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WYListPresentationController.swift; sourceTree = "<group>"; };
 		006045471DBB5F3B00B183FA /* WYContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WYContentCell.swift; sourceTree = "<group>"; };
 		006045481DBB5F3B00B183FA /* WYContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WYContentCell.xib; sourceTree = "<group>"; };
-		0060454B1DBDAAF500B183FA /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		0060454B1DBDAAF500B183FA /* AddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressViewController.swift; sourceTree = "<group>"; };
 		00AE04161DBE14E800278D6D /* WYListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WYListView.xib; sourceTree = "<group>"; };
+		00B3453E1DC093F8002A180F /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +88,8 @@
 				003D86D31DB779A20057634C /* ListViewController */,
 				003D86BF1DB7773A0057634C /* AppDelegate.swift */,
 				003D86D11DB778380057634C /* HomeTableViewController.swift */,
-				0060454B1DBDAAF500B183FA /* DetailViewController.swift */,
+				00B3453E1DC093F8002A180F /* DetailViewController.swift */,
+				0060454B1DBDAAF500B183FA /* AddressViewController.swift */,
 				003D86C31DB7773A0057634C /* Main.storyboard */,
 				003D86C61DB7773A0057634C /* Assets.xcassets */,
 				003D86C81DB7773A0057634C /* LaunchScreen.storyboard */,
@@ -211,13 +214,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0060454C1DBDAAF500B183FA /* DetailViewController.swift in Sources */,
+				0060454C1DBDAAF500B183FA /* AddressViewController.swift in Sources */,
 				003D86D21DB778380057634C /* HomeTableViewController.swift in Sources */,
 				006045491DBB5F3B00B183FA /* WYContentCell.swift in Sources */,
 				003D86FC1DB9B5010057634C /* WYListPresentationController.swift in Sources */,
 				003D86C01DB7773A0057634C /* AppDelegate.swift in Sources */,
 				003D86F51DB7D23D0057634C /* CustomConstant.swift in Sources */,
 				003D86F21DB7D0740057634C /* WYSegmentCell.swift in Sources */,
+				00B3453F1DC093F8002A180F /* DetailViewController.swift in Sources */,
 				003D86E81DB7D0100057634C /* WYListView.swift in Sources */,
 				003D86EC1DB7D0370057634C /* WYListCell.swift in Sources */,
 			);

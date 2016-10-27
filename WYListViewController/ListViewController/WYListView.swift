@@ -235,7 +235,7 @@ extension WYListView {
             let frame = CGRect(x: rect.origin.x + insert, y: rect.size.height - height,
                                width: rect.size.width - insert * 2, height: height)
             if animated {
-                UIView.animate(withDuration: 0.25, animations: { [unowned self] in
+                UIView.animate(withDuration: 0.15, animations: { [unowned self] in
                     self.floatView?.frame = frame
                 }) { [unowned self] (finished) in
                     self.floatView?.alpha = 1

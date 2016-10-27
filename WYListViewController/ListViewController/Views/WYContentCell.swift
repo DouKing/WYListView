@@ -50,7 +50,7 @@ class WYContentCell: UICollectionViewCell {
 
     func reload(completion: (() -> ())? = nil) {
         self.tableView.reloadData()
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + TimeInterval(0.15)) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + TimeInterval(0.1)) {
             if completion != nil {
                 completion!()
             }
